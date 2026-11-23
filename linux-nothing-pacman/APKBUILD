@@ -1,0 +1,72 @@
+# Reference: <https://nura.eco>
+maintainer=""
+pkgname=linux-nothing-pacman
+pkgver=5.15.167
+pkgrel=0
+pkgdesc="Nothing Phone 2a (MT6886) downstream kernel"
+arch="aarch64"
+_carch="arm64"
+_flavor="nothing-pacman"
+url="https://kernel.org"
+license="GPL-2.0-only"
+options="!strip !check !tracedeps pmb:cross-native"
+makedepends="
+bash
+bc
+binutils
+bison
+clang
+devicepkg-dev
+findutils
+flex
+lld
+llvm
+linux-headers
+openssl-dev
+perl
+python3
+xz
+"
+
+export CC="clang"
+export HOSTCC="clang"
+export LD="ld.lld"
+export LLVM="1"
+export LLVM_IAS="1"
+
+_repository="android_kernel_5.15_nothing_mt6886"
+_branch="mt6886/Pacman/t"
+_commit="t"
+_config="config-$_flavor.$arch"
+source="
+$pkgname-$_commit.tar.gz::https://github.com
+$_config
+"
+
+builddir="$srcdir/$_repository-mt6886-Pacman-t"
+_outdir="out"
+
+prepare() {
+default_prepare
+. downstreamkernel_prepare
+}
+
+build() {
+unset LDFLAGS
+make O="$_outdir" ARCH="$_carch" LLVM=1 LLVM_IAS=1 CC="$CC" LD="$LD" \
+KBUILD_BUILD_VERSION="$((pkgrel + 1 ))-Nura"
+make O="$_outdir" ARCH="$_carch" LLVM=1 LLVM_IAS=1 CC="$CC" LD="$LD" \
+mediatek/mt6886.dtb
+}
+
+package() {
+downstreamkernel_package "$builddir" "$pkgdir" "$_carch" \
+"$_flavor" "$_outdir"
+install -Dm644 "$builddir/$_outdir/arch/$_carch/boot/dts/mediatek/mt6886.dtb" \
+"$pkgdir/usr/share/dtb/mediatek/mt6886.dtb"
+}
+
+sha512sums="
+14a492a2db89a7aba4299257130c11f133bceb4e0cf8eb3529f189b630c75d12932f9529a45078de2e04c705d3b56ed0bb30047a071015a28b0846d1490f8971  linux-nothing-pacman-t.tar.gz
+2197fa9363ae6124009f2fcee85e93d6b8636d979a13c88d1b35c83106cabb654f62fae2ffb1184baaca3b4deb3ca7f55b5a746506482fbd3262cf3b66eba170  config-nothing-pacman.aarch64
+"

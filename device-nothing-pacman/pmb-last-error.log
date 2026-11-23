@@ -1,0 +1,428 @@
+(133922) [21:56:25] pmbootstrap v3.12.1 (Python 3.14.10 (main, Nov  4 2026, 18:21:50) [GCC 16.2.1 20260810])
+(133922) [21:56:26] % cd /home/nikoro/.local/var/pmbootstrap/cache_git/pmaports; git remote -v
+(133922) [21:56:26] % cd /home/nikoro/.local/var/pmbootstrap/cache_git/pmaports; git show origin/main:channels.cfg
+(133922) [21:56:32] *** (1/4) PREPARE NATIVE CHROOT ***
+(133922) [21:56:32] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/dev
+(133922) [21:56:32] % sudo mount -t tmpfs -o size=1M,noexec,dev tmpfs /home/nikoro/.local/var/pmbootstrap/chroot_native/dev
+(133922) [21:56:32] % sudo ln -s /proc/self/fd/0 /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/stdin
+(133922) [21:56:32] % sudo ln -s /proc/self/fd/1 /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/stdout
+(133922) [21:56:32] % sudo ln -s /proc/self/fd/2 /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/stderr
+(133922) [21:56:32] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/pts /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/shm
+(133922) [21:56:32] % sudo mount -t tmpfs -o nodev,nosuid,noexec tmpfs /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/shm
+(133922) [21:56:32] % sudo mount -t devpts -o ptmxmode=0666 devpts /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/pts
+(133922) [21:56:32] % sudo mknod /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/null c 1 3
+(133922) [21:56:32] % sudo chmod 666 /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/null
+(133922) [21:56:32] % sudo mknod /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/zero c 1 5
+(133922) [21:56:32] % sudo chmod 666 /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/zero
+(133922) [21:56:32] % sudo mknod /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/full c 1 7
+(133922) [21:56:32] % sudo chmod 666 /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/full
+(133922) [21:56:32] % sudo mknod /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/random c 1 8
+(133922) [21:56:32] % sudo chmod 666 /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/random
+(133922) [21:56:32] % sudo mknod /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/urandom c 1 9
+(133922) [21:56:32] % sudo chmod 666 /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/urandom
+(133922) [21:56:32] % sudo mknod /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/tty c 5 0
+(133922) [21:56:33] % sudo chmod 666 /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/tty
+(133922) [21:56:33] % sudo mknod /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/ptmx c 5 2
+(133922) [21:56:33] % sudo chmod 666 /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/ptmx
+(133922) [21:56:33] % sudo ln -sf /proc/self/fd /home/nikoro/.local/var/pmbootstrap/chroot_native/dev/
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/proc
+(133922) [21:56:33] % sudo mount --bind /proc /home/nikoro/.local/var/pmbootstrap/chroot_native/proc
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/sys
+(133922) [21:56:33] % sudo mount --bind /sys /home/nikoro/.local/var/pmbootstrap/chroot_native/sys
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/var/cache/apk
+(133922) [21:56:33] % sudo mount --bind /home/nikoro/.local/var/pmbootstrap/cache_apk_x86_64 /home/nikoro/.local/var/pmbootstrap/chroot_native/var/cache/apk
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/appstream-data
+(133922) [21:56:33] % sudo mount --bind /home/nikoro/.local/var/pmbootstrap/cache_appstream/x86_64/edge /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/appstream-data
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/ccache
+(133922) [21:56:33] % sudo mount --bind /home/nikoro/.local/var/pmbootstrap/cache_ccache_x86_64 /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/ccache
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/var/cache/distfiles
+(133922) [21:56:33] % sudo mount --bind /home/nikoro/.local/var/pmbootstrap/cache_distfiles /home/nikoro/.local/var/pmbootstrap/chroot_native/var/cache/distfiles
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/git
+(133922) [21:56:33] % sudo mount --bind /home/nikoro/.local/var/pmbootstrap/cache_git /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/git
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/go
+(133922) [21:56:33] % sudo mount --bind /home/nikoro/.local/var/pmbootstrap/cache_go /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/go
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/rust
+(133922) [21:56:33] % sudo mount --bind /home/nikoro/.local/var/pmbootstrap/cache_rust /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/rust
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/abuild-config
+(133922) [21:56:33] % sudo mount --bind /home/nikoro/.local/var/pmbootstrap/config_abuild /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/abuild-config
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/etc/apk/keys
+(133922) [21:56:33] % sudo mount --bind /home/nikoro/.local/var/pmbootstrap/config_apk_keys /home/nikoro/.local/var/pmbootstrap/chroot_native/etc/apk/keys
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/sccache
+(133922) [21:56:33] % sudo mount --bind /home/nikoro/.local/var/pmbootstrap/cache_sccache /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/sccache
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/netboot
+(133922) [21:56:33] % sudo mount --bind /home/nikoro/.local/var/pmbootstrap/images_netboot /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/netboot
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/packages
+(133922) [21:56:33] % sudo mount --bind /home/nikoro/.local/var/pmbootstrap/packages /home/nikoro/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/packages
+(133922) [21:56:33] % sudo touch /home/nikoro/.local/var/pmbootstrap/chroot_native/in-pmbootstrap
+(133922) [21:56:33] sigfilename: sbin/apk.static.SIGN.RSA.sha256.alpine-devel@lists.alpinelinux.org-6165ee59.rsa.pub
+(133922) [21:56:33] sigkey: alpine-devel@lists.alpinelinux.org-6165ee59.rsa.pub
+(133922) [21:56:33] extracted: /tmp/pmbootstrapp011bqb8apk
+(133922) [21:56:33] extracted: /tmp/pmbootstrapis74yi2psig
+(133922) [21:56:33] Verify apk.static signature with /usr/lib/python3.14/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-6165ee59.rsa.pub
+(133922) [21:56:33] % openssl dgst -sha256 -verify /usr/lib/python3.14/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-6165ee59.rsa.pub -signature /tmp/pmbootstrapis74yi2psig /tmp/pmbootstrapp011bqb8apk
+Verified OK
+(133922) [21:56:33] Verify the version reported by the apk.static binary (must match the package version 3.0.10-r1)
+(133922) [21:56:33] % /tmp/pmbootstrapp011bqb8apk --version
+apk-tools 3.0.10-r1, compiled for x86_64.
+(133922) [21:56:33] (native) Creating chroot
+(133922) [21:56:33] % sudo cp /etc/resolv.conf /home/nikoro/.local/var/pmbootstrap/chroot_native/etc/resolv.conf
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/etc/apk
+(133922) [21:56:33] (chroot_native) update /etc/apk/repositories
+(133922) [21:56:33] % sudo sh -c echo https://postmarketos.craftyguy.net/main >> /home/nikoro/.local/var/pmbootstrap/chroot_native/etc/apk/repositories
+(133922) [21:56:33] % sudo sh -c echo http://cdn.alpinelinux.org/edge/main >> /home/nikoro/.local/var/pmbootstrap/chroot_native/etc/apk/repositories
+(133922) [21:56:33] % sudo sh -c echo http://cdn.alpinelinux.org/edge/community >> /home/nikoro/.local/var/pmbootstrap/chroot_native/etc/apk/repositories
+(133922) [21:56:33] % sudo sh -c echo http://cdn.alpinelinux.org/edge/testing >> /home/nikoro/.local/var/pmbootstrap/chroot_native/etc/apk/repositories
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/chroot_native/usr/bin /home/nikoro/.local/var/pmbootstrap/chroot_native/usr/sbin /home/nikoro/.local/var/pmbootstrap/chroot_native/usr/lib
+(133922) [21:56:33] % sudo ln -s usr/bin usr/sbin usr/lib /home/nikoro/.local/var/pmbootstrap/chroot_native/
+(133922) [21:56:33] % sudo rm -r /home/nikoro/.local/var/pmbootstrap/chroot_native/sbin /home/nikoro/.local/var/pmbootstrap/chroot_native/usr/sbin
+(133922) [21:56:33] % sudo ln -s usr/bin /home/nikoro/.local/var/pmbootstrap/chroot_native/sbin
+(133922) [21:56:33] % sudo ln -s bin /home/nikoro/.local/var/pmbootstrap/chroot_native/usr/sbin
+(133922) [21:56:33] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/tmp
+(133922) [21:56:33] % sudo rm -f /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:33] % sudo mkfifo /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:33] % sudo cat /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:33] % sudo sh -c exec 3>/home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo; /home/nikoro/.local/var/pmbootstrap/apk.static --progress-fd 3 --no-progress --root /home/nikoro/.local/var/pmbootstrap/chroot_native --arch x86_64 --cache-dir /home/nikoro/.local/var/pmbootstrap/cache_apk_x86_64 --repository /home/nikoro/.local/var/pmbootstrap/packages/edge --initdb add --no-interactive alpine-baselayout apk-tools busybox musl-utils ;
+(133922) [21:56:33] New background process: pid=134197, output=background
+WARNING: opening /home/nikoro/.local/var/pmbootstrap/packages/edge/x86_64/APKINDEX.tar.gz: No such file or directory
+( 1/14) Installing alpine-baselayout-data (3.7.2-r1)
+( 2/14) Installing musl (1.2.6-r6)
+( 3/14) Installing busybox (1.38.0-r8)
+  Executing busybox-1.38.0-r8.post-install
+( 4/14) Installing busybox-binsh (1.38.0-r8)
+( 5/14) Installing alpine-baselayout (3.7.2-r1)
+  Executing alpine-baselayout-3.7.2-r1.pre-install
+  Executing alpine-baselayout-3.7.2-r1.post-install
+( 6/14) Installing libcrypto3 (3.5.9-r1)
+( 7/14) Installing libssl3 (3.5.9-r1)
+( 8/14) Installing ssl_client (1.38.0-r8)
+( 9/14) Installing zlib (1.4-r0)
+(10/14) Installing libapk (3.0.10-r1)
+(11/14) Installing ca-certificates-bundle (20261020-r0)
+(12/14) Installing apk-tools (3.0.10-r1)
+(13/14) Installing scanelf (1.3.11-r0)
+(14/14) Installing musl-utils (1.2.6-r6)
+Executing busybox-1.38.0-r8.trigger
+OK: 8219 KiB in 14 packages
+(133922) [21:56:34] (native) % adduser -D pmos -u 12345
+(133922) [21:56:34] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap/abuild-config /home/pmos/.abuild ;
+(133922) [21:56:34] (native) % chown pmos:pmos /mnt/pmbootstrap/abuild-config
+(133922) [21:56:34] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap/ccache /home/pmos/.ccache ;
+(133922) [21:56:34] (native) % chown pmos:pmos /mnt/pmbootstrap/ccache
+(133922) [21:56:34] (native) % busybox su pmos -c HOME=/home/pmos mkdir -p /home/pmos/.cache ;
+(133922) [21:56:34] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap/go/gocache /home/pmos/.cache/go-build ;
+(133922) [21:56:34] (native) % chown pmos:pmos /mnt/pmbootstrap/go/gocache
+(133922) [21:56:34] (native) % busybox su pmos -c HOME=/home/pmos mkdir -p /home/pmos/go/pkg ;
+(133922) [21:56:34] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap/go/gomodcache /home/pmos/go/pkg/mod ;
+(133922) [21:56:34] (native) % chown pmos:pmos /mnt/pmbootstrap/go/gomodcache
+(133922) [21:56:34] (native) % busybox su pmos -c HOME=/home/pmos mkdir -p /home/pmos/.cargo/git ;
+(133922) [21:56:34] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap/rust/git/db /home/pmos/.cargo/git/db ;
+(133922) [21:56:34] (native) % chown pmos:pmos /mnt/pmbootstrap/rust/git/db
+(133922) [21:56:34] (native) % busybox su pmos -c HOME=/home/pmos mkdir -p /home/pmos/.cargo/registry ;
+(133922) [21:56:34] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap/rust/registry/cache /home/pmos/.cargo/registry/cache ;
+(133922) [21:56:34] (native) % chown pmos:pmos /mnt/pmbootstrap/rust/registry/cache
+(133922) [21:56:34] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap/rust/registry/index /home/pmos/.cargo/registry/index ;
+(133922) [21:56:34] (native) % chown pmos:pmos /mnt/pmbootstrap/rust/registry/index
+(133922) [21:56:34] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap/sccache /home/pmos/.cache/sccache ;
+(133922) [21:56:34] (native) % chown pmos:pmos /mnt/pmbootstrap/sccache
+(133922) [21:56:35] (native) install cryptsetup util-linux parted
+(133922) [21:56:35] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/tmp
+(133922) [21:56:35] % sudo rm -f /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:35] % sudo mkfifo /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:35] % sudo cat /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:35] % sudo sh -c exec 3>/home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo; /home/nikoro/.local/var/pmbootstrap/apk.static --progress-fd 3 --no-progress --root /home/nikoro/.local/var/pmbootstrap/chroot_native --arch x86_64 --cache-dir /home/nikoro/.local/var/pmbootstrap/cache_apk_x86_64 --repository /home/nikoro/.local/var/pmbootstrap/packages/edge add --no-interactive cryptsetup util-linux parted ;
+(133922) [21:56:35] New background process: pid=134319, output=background
+WARNING: opening /home/nikoro/.local/var/pmbootstrap/packages/edge/x86_64/APKINDEX.tar.gz: No such file or directory
+( 1/43) Installing libeconf (0.8.4-r0)
+( 2/43) Installing libblkid (2.42.4-r3)
+( 3/43) Installing device-mapper-libs (2.03.44-r0)
+( 4/43) Installing json-c (0.19-r1)
+( 5/43) Installing libuuid (2.42.4-r3)
+( 6/43) Installing cryptsetup-libs (2.8.8-r0)
+( 7/43) Installing popt (1.19-r4)
+( 8/43) Installing cryptsetup (2.8.8-r0)
+( 9/43) Installing ncurses-terminfo-base (6.6_p20261114-r0)
+(10/43) Installing libncursesw (6.6_p20261114-r0)
+(11/43) Installing readline (8.3.3-r1)
+(12/43) Installing parted (3.8-r0)
+(13/43) Installing util-linux (2.42.4-r3)
+(14/43) Installing dmesg (2.42.4-r3)
+(15/43) Installing setarch (2.42.4-r3)
+(16/43) Installing libfdisk (2.42.4-r3)
+(17/43) Installing libmount (2.42.4-r3)
+(18/43) Installing libsmartcols (2.42.4-r3)
+(19/43) Installing skalibs-libs (2.16.0.0-r0)
+(20/43) Installing utmps-libs (0.1.3.4-r1)
+(21/43) Installing util-linux-misc (2.42.4-r3)
+(22/43) Installing linux-pam (1.7.1-r5)
+(23/43) Installing runuser (2.42.4-r3)
+(24/43) Installing mount (2.42.4-r3)
+(25/43) Installing losetup (2.42.4-r3)
+(26/43) Installing hexdump (2.42.4-r3)
+(27/43) Installing uuidgen (2.42.4-r3)
+(28/43) Installing blkid (2.42.4-r3)
+(29/43) Installing sfdisk (2.42.4-r3)
+(30/43) Installing mcookie (2.42.4-r3)
+(31/43) Installing agetty (2.42.4-r3)
+(32/43) Installing wipefs (2.42.4-r3)
+(33/43) Installing cfdisk (2.42.4-r3)
+(34/43) Installing umount (2.42.4-r3)
+(35/43) Installing flock (2.42.4-r3)
+(36/43) Installing lsblk (2.42.4-r3)
+(37/43) Installing libcap-ng (0.9.6-r0)
+(38/43) Installing setpriv (2.42.4-r3)
+(39/43) Installing lscpu (2.42.4-r3)
+(40/43) Installing logger (2.42.4-r3)
+(41/43) Installing partx (2.42.4-r3)
+(42/43) Installing fstrim (2.42.4-r3)
+(43/43) Installing findmnt (2.42.4-r3)
+Executing busybox-1.38.0-r8.trigger
+OK: 15.8 MiB in 57 packages
+(133922) [21:56:36] *** (2/4) CREATE DEVICE ROOTFS ("nothing-pacman") ***
+(133922) [21:56:36] Attempting to build: qemu-aarch64
+(133922) [21:56:37] (native) install qemu-aarch64
+(133922) [21:56:37] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/tmp
+(133922) [21:56:37] % sudo rm -f /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:37] % sudo mkfifo /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:37] % sudo cat /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:37] % sudo sh -c exec 3>/home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo; /home/nikoro/.local/var/pmbootstrap/apk.static --progress-fd 3 --no-progress --root /home/nikoro/.local/var/pmbootstrap/chroot_native --arch x86_64 --cache-dir /home/nikoro/.local/var/pmbootstrap/cache_apk_x86_64 --repository /home/nikoro/.local/var/pmbootstrap/packages/edge add --no-interactive qemu-aarch64 ;
+(133922) [21:56:37] New background process: pid=134342, output=background
+WARNING: opening /home/nikoro/.local/var/pmbootstrap/packages/edge/x86_64/APKINDEX.tar.gz: No such file or directory
+(1/1) Installing qemu-aarch64 (11.1.3-r0)
+Executing busybox-1.38.0-r8.trigger
+OK: 22.3 MiB in 58 packages
+(133922) [21:56:37] (rootfs_nothing-pacman) % getent passwd nikoro
+nikoro:x:10000:10000::/home/nikoro:/bin/ash
+(133922) [21:56:37] (rootfs_nothing-pacman) % addgroup -S netdev
+addgroup: group 'netdev' in use
+(133922) [21:56:37] (rootfs_nothing-pacman) % addgroup nikoro netdev
+(133922) [21:56:37] (rootfs_nothing-pacman) % addgroup -S plugdev
+addgroup: group 'plugdev' in use
+(133922) [21:56:37] (rootfs_nothing-pacman) % addgroup nikoro plugdev
+(133922) [21:56:37] (rootfs_nothing-pacman) % addgroup -S wheel
+addgroup: group 'wheel' in use
+(133922) [21:56:37] (rootfs_nothing-pacman) % addgroup nikoro wheel
+(133922) [21:56:38] postmarketos-base: install _pmb_recommends: sudo-rs
+(133922) [21:56:38] postmarketos-base-ui: install _pmb_recommends: font-twemoji, font-droid-nonlatin, lang, font-droid
+(133922) [21:56:39] Attempting to build: font-droid-nonlatin, font-twemoji, font-droid, lang, sudo-rs, postmarketos-base-nofde, foot, postmarketos-base-ui-wifi-iwd, postmarketos-base-ui-audio-backend-pipewire, postmarketos-ui-console, device-nothing-pacman, postmarketos-base
+(133922) [21:56:40] sudo-rs: picked provider(s) with highest priority 90: sudo-rs
+(133922) [21:56:40] aarch64/postmarketos-base-nofde: Generating dependency tree
+(133922) [21:56:40] aarch64/postmarketos-base-ui-wifi-iwd: Generating dependency tree
+(133922) [21:56:40] WARNING: about to install postmarketos-base-ui 66-r0 (local pmaports: 65-r0, consider 'pmbootstrap pull')
+(133922) [21:56:40] chrony: picked provider(s) with highest priority 100: chrony
+(133922) [21:56:40] WARNING: about to install postmarketos-base 79-r0 (local pmaports: 78-r0, consider 'pmbootstrap pull')
+(133922) [21:56:40] postmarketos-bootsplash-virtual: picked provider(s) with highest priority 100: postmarketos-bootsplash
+(133922) [21:56:40] postmarketos-bootsplash: picked provider(s) with highest priority 100: postmarketos-bootsplash
+(133922) [21:56:40] wireplumber: picked provider(s) with highest priority 50: wireplumber
+(133922) [21:56:40] aarch64/postmarketos-base-ui-audio-backend-pipewire: Generating dependency tree
+(133922) [21:56:40] WARNING: about to install postmarketos-base-ui 66-r0 (local pmaports: 65-r0, consider 'pmbootstrap pull')
+(133922) [21:56:40] aarch64/avahi: marked for build
+(133922) [21:56:40] aarch64/chrony: marked for build
+(133922) [21:56:40] aarch64/dbus: marked for build
+(133922) [21:56:40] aarch64/fwupd: marked for build
+(133922) [21:56:40] aarch64/haveged: marked for build
+(133922) [21:56:40] aarch64/nftables: marked for build
+(133922) [21:56:40] aarch64/pipewire: marked for build
+(133922) [21:56:40] aarch64/pipewire-spa-libcamera: marked for build
+(133922) [21:56:40] aarch64/pipewire-webrtc: marked for build
+(133922) [21:56:40] aarch64/postmarketos-artwork-icons: marked for build
+(133922) [21:56:40] aarch64/postmarketos-base: marked for build
+(133922) [21:56:40] aarch64/postmarketos-bootsplash-virtual: marked for build
+(133922) [21:56:40] aarch64/shadow: marked for build
+(133922) [21:56:40] aarch64/tzdata: marked for build
+(133922) [21:56:40] aarch64/util-linux: marked for build
+(133922) [21:56:40] aarch64/wireless-regdb: marked for build
+(133922) [21:56:40] aarch64/wireplumber: marked for build
+(133922) [21:56:40] aarch64/xdg-utils: marked for build
+(133922) [21:56:40] aarch64/postmarketos-ui-console: Generating dependency tree
+(133922) [21:56:40] WARNING: about to install postmarketos-base-ui 66-r0 (local pmaports: 65-r0, consider 'pmbootstrap pull')
+(133922) [21:56:40] WARNING: about to install postmarketos-base-ui 66-r0 (local pmaports: 65-r0, consider 'pmbootstrap pull')
+(133922) [21:56:40] aarch64/device-nothing-pacman: Generating dependency tree
+(133922) [21:56:40] aarch64/postmarketos-base: marked for build
+(133922) [21:56:40] aarch64/postmarketos-base: marked for build
+(133922) [21:56:40] postmarketos-base-ui-audio-backend-pipewire: picked provider(s) with highest priority 90: postmarketos-base-ui-audio-backend-pipewire
+(133922) [21:56:40] postmarketos-ramdisk: picked provider(s) with highest priority 10: postmarketos-initramfs
+(133922) [21:56:40] pipewire-pulse: picked provider(s) with highest priority 1: pipewire-pulse
+(133922) [21:56:40] util-linux-login: picked provider(s) with highest priority 100: util-linux-login
+(133922) [21:56:40] pulseaudio-utils: picked provider(s) with highest priority 10: pulseaudio-utils
+(133922) [21:56:40] /bin/sh: picked provider(s) with highest priority 100: busybox-binsh
+(133922) [21:56:40] pipewire-session-manager: picked provider(s) with highest priority 50: wireplumber
+(133922) [21:56:40] udev: picked provider(s) with highest priority 100: eudev
+(133922) [21:56:40] postmarketos-fde-unlocker: has multiple providers (postmarketos-base-nofde, postmarketos-buffybox-unl0kr), picked shortest: postmarketos-base-nofde
+(133922) [21:56:40] postmarketos-base-init: picked provider(s) with highest priority 10: postmarketos-base-openrc
+(133922) [21:56:40] sudo-virt: picked provider(s) with highest priority 100: sudo
+(133922) [21:56:40] sudo-rs: picked provider(s) with highest priority 90: sudo-rs
+(133922) [21:56:40] postmarketos-base-ui-wifi-iwd: picked provider(s) with highest priority 90: postmarketos-base-ui-wifi-iwd
+(133922) [21:56:40] openrc-user-pam: picked provider(s) with highest priority 1: openrc-user-pam
+(133922) [21:56:40] postmarketos-mkinitfs: picked provider(s) with highest priority 999: postmarketos-mkinitfs
+(133922) [21:56:40] udev-init-scripts-openrc: picked provider(s) with highest priority 10: udev-init-scripts-openrc
+(133922) [21:56:40] eudev-openrc: picked provider(s) with highest priority 100: eudev-openrc
+(133922) [21:56:40] busybox-mdev-openrc: picked provider(s) with highest priority 30: busybox-mdev-openrc
+(133922) [21:56:40] dnsmasq: picked provider(s) with highest priority 100: dnsmasq
+(133922) [21:56:40] postmarketos-base-ui-wifi: picked provider(s) with highest priority 100: postmarketos-base-ui-wifi-wpa_supplicant
+(133922) [21:56:40] iwd: picked provider(s) with highest priority 1: iwd
+(133922) [21:56:40] postmarketos-bootsplash-virtual: picked provider(s) with highest priority 100: postmarketos-bootsplash
+(133922) [21:56:40] wpa_supplicant: picked provider(s) with highest priority 10: wpa_supplicant
+(133922) [21:56:40] openrc-user: picked provider(s) with highest priority 100: openrc-user
+(133922) [21:56:40] libcrypto3: picked provider(s) with highest priority 100: libcrypto3
+(133922) [21:56:40] chrony: picked provider(s) with highest priority 100: chrony
+(133922) [21:56:40] ifupdown-any: picked provider(s) with highest priority 900: ifupdown-ng
+(133922) [21:56:40] polkit: picked provider(s) with highest priority 100: polkit
+(133922) [21:56:40] libssl3: picked provider(s) with highest priority 100: libssl3
+(133922) [21:56:40] polkit-noelogind-libs: picked provider(s) with highest priority 100: polkit-noelogind-libs
+(133922) [21:56:40] nm-wifi-backend: picked provider(s) with highest priority 10: wpa_supplicant
+(133922) [21:56:40] (rootfs_nothing-pacman) install postmarketos-base device-nothing-pacman postmarketos-ui-console postmarketos-base-ui-audio-backend-pipewire postmarketos-base-ui-wifi-iwd foot postmarketos-base-nofde sudo-rs lang font-droid font-twemoji font-droid-nonlatin
+(133922) [21:56:40] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/tmp
+(133922) [21:56:40] % sudo rm -f /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:40] % sudo mkfifo /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:40] % sudo cat /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:40] % sudo sh -c exec 3>/home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo; /home/nikoro/.local/var/pmbootstrap/apk.static --progress-fd 3 --no-progress --root /home/nikoro/.local/var/pmbootstrap/chroot_rootfs_nothing-pacman --arch aarch64 --cache-dir /home/nikoro/.local/var/pmbootstrap/cache_apk_aarch64 --repository /home/nikoro/.local/var/pmbootstrap/packages/edge add --no-interactive font-droid-nonlatin font-twemoji font-droid lang sudo-rs postmarketos-base-nofde foot postmarketos-base-ui-wifi-iwd postmarketos-base-ui-audio-backend-pipewire postmarketos-ui-console device-nothing-pacman postmarketos-base ;
+(133922) [21:56:40] New background process: pid=134406, output=background
+OK: 527.5 MiB in 399 packages
+(133922) [21:56:40] % sudo /home/nikoro/.local/var/pmbootstrap/apk.static --no-progress --root /home/nikoro/.local/var/pmbootstrap/chroot_rootfs_nothing-pacman --arch aarch64 --cache-dir /home/nikoro/.local/var/pmbootstrap/cache_apk_aarch64 --repository /home/nikoro/.local/var/pmbootstrap/packages/edge add --no-interactive -u --virtual .pmbootstrap /home/nikoro/.local/var/pmbootstrap/packages/edge/aarch64/device-nothing-pacman-1-r0.apk /home/nikoro/.local/var/pmbootstrap/packages/edge/aarch64/linux-nothing-pacman-5.15.167-r0.apk
+(1/2) Replacing linux-nothing-pacman (5.15.167-r0 -> 5.15.167-r0)
+(2/2) Installing .pmbootstrap (20261122.185641)
+Executing postmarketos-mkinitfs-2.12.2-r0.trigger
+* mkinitfs: skipping (running in pmbootstrap)
+* mkinitfs: to force building a new initramfs, run 'mkinitfs'
+OK: 527.8 MiB in 400 packages
+(133922) [21:56:41] % sudo /home/nikoro/.local/var/pmbootstrap/apk.static --no-progress --root /home/nikoro/.local/var/pmbootstrap/chroot_rootfs_nothing-pacman --arch aarch64 --cache-dir /home/nikoro/.local/var/pmbootstrap/cache_apk_aarch64 --repository /home/nikoro/.local/var/pmbootstrap/packages/edge del .pmbootstrap
+(1/1) Purging .pmbootstrap (20261122.185641)
+OK: 527.8 MiB in 399 packages
+(133922) [21:56:42] Attempting to build: postmarketos-mkinitfs
+(133922) [21:56:42] aarch64/postmarketos-mkinitfs: Generating dependency tree
+(133922) [21:56:42] postmarketos-mkinitfs: picked provider(s) with highest priority 999: postmarketos-mkinitfs
+(133922) [21:56:42] postmarketos-mkinitfs: picked provider(s) with highest priority 999: postmarketos-mkinitfs
+(133922) [21:56:42] /bin/sh: picked provider(s) with highest priority 100: busybox-binsh
+(133922) [21:56:42] (rootfs_nothing-pacman) install postmarketos-mkinitfs
+(133922) [21:56:42] % sudo mkdir -p /home/nikoro/.local/var/pmbootstrap/tmp
+(133922) [21:56:42] % sudo rm -f /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:42] % sudo mkfifo /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:42] % sudo cat /home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo
+(133922) [21:56:42] % sudo sh -c exec 3>/home/nikoro/.local/var/pmbootstrap/tmp/apk_progress_fifo; /home/nikoro/.local/var/pmbootstrap/apk.static --progress-fd 3 --no-progress --root /home/nikoro/.local/var/pmbootstrap/chroot_rootfs_nothing-pacman --arch aarch64 --cache-dir /home/nikoro/.local/var/pmbootstrap/cache_apk_aarch64 --repository /home/nikoro/.local/var/pmbootstrap/packages/edge add --no-interactive postmarketos-mkinitfs ;
+(133922) [21:56:42] New background process: pid=134438, output=background
+OK: 527.8 MiB in 399 packages
+(133922) [21:56:42] (rootfs_nothing-pacman) mkinitfs
+(133922) [21:56:42] (rootfs_nothing-pacman) % mkinitfs
+18:56:42.935733 Generating for kernel version: 5.15.104
+18:56:42.938543 Output directory: /boot
+18:56:42.938873 Unknown or no compression format set, using zstd
+18:56:42.938962 == Generating initramfs ==
+18:56:42.939156 - Using compression format zstd with level "default"
+18:56:42.941370 - Searching for directories specified in /usr/share/mkinitfs/dirs
+18:56:42.942484 -- Creating directories from: /usr/share/mkinitfs/dirs/00-initramfs-base.dirs
+18:56:42.944852 - Searching for directories specified in /etc/mkinitfs/dirs
+18:56:42.945709 - Searching for file lists from /usr/share/mkinitfs/files
+18:56:42.946327 -- Including files from: /usr/share/mkinitfs/files/00-device-nothing-pacman-modules.files
+18:56:42.948310 -- Including files from: /usr/share/mkinitfs/files/00-initramfs-base.files
+18:56:42.966673 --- Unable to find optional path, skipping...
+18:56:42.967013 --- Unable to find optional path, skipping...
+18:56:43.041266 -- Including files from: /usr/share/mkinitfs/files/10-wireless-regdb.files
+18:56:43.043885 -- Including files from: /usr/share/mkinitfs/files/postmarketos-base.files
+18:56:43.046001 - Searching for file lists from /etc/mkinitfs/files
+18:56:43.047029 - Searching for hook scripts from /usr/share/mkinitfs/hooks
+18:56:43.047916 - Searching for hook scripts from /etc/mkinitfs/hooks
+18:56:43.048384 - Searching for hook scripts from /usr/share/mkinitfs/hooks-cleanup
+18:56:43.049021 -- Unable to find dir, skipping...
+18:56:43.049208 - Searching for hook scripts from /etc/mkinitfs/hooks-cleanup
+18:56:43.049326 -- Unable to find dir, skipping...
+18:56:43.051198 -- kernel module directory not found: "/lib/modules/5.15.104", not including modules
+18:56:43.052432 -- kernel module directory not found: "/lib/modules/5.15.104", not including modules
+18:56:43.066653 - Searching for file lists from /usr/share/mkinitfs/files-extra
+18:56:43.067577 -- Including files from: /usr/share/mkinitfs/files-extra/00-initramfs-extra-base.files
+18:56:43.757135 -- Including files from: /usr/share/mkinitfs/files-extra/30-postmarketos-bootsplash.files
+18:56:43.931085 - Searching for file lists from /etc/mkinitfs/files-extra
+18:56:43.931533 - Searching for hook scripts from /usr/share/mkinitfs/hooks-extra
+18:56:43.931785 - Searching for hook scripts from /etc/mkinitfs/hooks-extra
+18:56:43.932582 -- kernel module directory not found: "/lib/modules/5.15.104", not including modules
+18:56:43.933166 -- kernel module directory not found: "/lib/modules/5.15.104", not including modules
+18:56:46.687561 initramfs completed in: 3.75s
+18:56:46.692708 == Using boot-deploy to finalize/install files ==
+==> Running hooks
+==> initramfs: creating boot.img
+Parsing /usr/lib/kernel-cmdline.d/00-base.conf
+Parsing /usr/lib/kernel-cmdline.d/20-plymouth.conf
+usage: mkbootimg [-h] [--kernel KERNEL] [--ramdisk RAMDISK] [--second SECOND]
+                 [--dtb DTB] [--recovery_dtbo RECOVERY_DTBO |
+                 --recovery_acpio RECOVERY_ACPIO] [--cmdline CMDLINE]
+                 [--vendor_cmdline VENDOR_CMDLINE] [--base BASE]
+                 [--kernel_offset KERNEL_OFFSET]
+                 [--ramdisk_offset RAMDISK_OFFSET]
+                 [--second_offset SECOND_OFFSET] [--dtb_offset DTB_OFFSET]
+                 [--os_version OS_VERSION] [--os_patch_level OS_PATCH_LEVEL]
+                 [--tags_offset TAGS_OFFSET] [--board BOARD]
+                 [--pagesize {2048,4096,8192,16384}] [--id]
+                 [--header_version HEADER_VERSION] [-o OUTPUT]
+                 [--vendor_boot VENDOR_BOOT] [--vendor_ramdisk VENDOR_RAMDISK]
+                 [--vendor_bootconfig VENDOR_BOOTCONFIG]
+                 [--gki_signing_algorithm GKI_SIGNING_ALGORITHM]
+                 [--gki_signing_key GKI_SIGNING_KEY]
+                 [--gki_signing_signature_args GKI_SIGNING_SIGNATURE_ARGS]
+                 [--gki_signing_avbtool_path GKI_SIGNING_AVBTOOL_PATH]
+mkbootimg: error: argument --dtb: can't open '': [Errno 2] No such file or directory: ''
+18:56:49.032465 boot-deploy completed in: 2.34s
+18:56:49.032572 exit status 1
+18:56:49.032807 boot-deploy failed
+18:56:49.034841 mkinitfs completed in: 6.10s
+(133922) [21:56:49] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(133922) [21:56:49] NOTE: The failed command's output is above the ^^^ line in the log file: /home/nikoro/.local/var/pmbootstrap/log.txt
+(133922) [21:56:49] ERROR: Command failed (exit code 1): (rootfs_nothing-pacman) % mkinitfs
+(133922) [21:56:49] See also: <https://postmarketos.org/troubleshooting>
+(133922) [21:56:49] Traceback (most recent call last):
+  File "/usr/lib/python3.14/site-packages/pmb/__init__.py", line 113, in main
+    run_command(args)
+    ~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/site-packages/pmb/commands/__init__.py", line 139, in run_command
+    install(
+    ~~~~~~~^
+        args.add,
+        ^^^^^^^^^
+    ...<27 lines>...
+        args.zap,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/lib/python3.14/site-packages/pmb/commands/install.py", line 113, in install
+    pmb.install.install(
+    ~~~~~~~~~~~~~~~~~~~^
+        add,
+        ^^^^
+    ...<26 lines>...
+        is_split,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/lib/python3.14/site-packages/pmb/install/_install.py", line 1415, in install
+    create_device_rootfs(
+    ~~~~~~~~~~~~~~~~~~~~^
+        step,
+        ^^^^^
+    ...<7 lines>...
+        no_firewall,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib/python3.14/site-packages/pmb/install/_install.py", line 1324, in create_device_rootfs
+    pmb.chroot.initfs.build(chroot)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/usr/lib/python3.14/site-packages/pmb/chroot/initfs.py", line 23, in build
+    pmb.chroot.root(["mkinitfs"], chroot)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/site-packages/pmb/chroot/run.py", line 177, in root
+    return rootm(
+        [cmds],
+    ...<7 lines>...
+        add_proxy_env_vars,
+    )
+  File "/usr/lib/python3.14/site-packages/pmb/chroot/run.py", line 96, in rootm
+    return pmb.helpers.run_core.core(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        msg, cmd_sudo, None, output, output_return, check, True, disable_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib/python3.14/site-packages/pmb/helpers/run_core.py", line 502, in core
+    check_return_code(code, log_message)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/site-packages/pmb/helpers/run_core.py", line 339, in check_return_code
+    raise CommandFailedError(f"Command failed (exit code {code}): " + log_message)
+pmb.helpers.exceptions.CommandFailedError: Command failed (exit code 1): (rootfs_nothing-pacman) % mkinitfs

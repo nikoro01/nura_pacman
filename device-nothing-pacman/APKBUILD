@@ -1,0 +1,33 @@
+# Reference: <https://nura.eco/devicepkg>
+maintainer=""
+pkgname=device-nothing-pacman
+pkgver=1
+pkgrel=0
+pkgdesc="nothing Nothing Phone 2a"
+url="https://nura.eco"
+arch="aarch64"
+license="MIT"
+depends="
+	android-tools-mkbootimg
+	linux-nothing-pacman
+	postmarketos-base
+	"
+makedepends="devicepkg-dev"
+source="
+	deviceinfo
+	modules-initfs
+	"
+options="!archcheck !check"
+
+build() {
+	devicepkg_build $startdir $pkgname
+}
+
+package() {
+	devicepkg_package $startdir $pkgname
+}
+
+sha512sums="
+272f6b9ed6fe25ff6bb898ba64531c2d4b2bf507a3090a5ca8dba626f2f3c7fb8979daa552fe1f0a54715194b85119968ca8cc6589cb0ec684ea0e68e64e4d03  deviceinfo
+e70bae17df23dcaaaea0e2d3616556f04baa23f8ee1357785c0f539bf97282d8ddff53953e155b72689bb73beb38c2da3d08de2a61e866684edfa10a6593885d  modules-initfs
+"
